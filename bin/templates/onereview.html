@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+
+<title>Rental Review Page</title>
+
+
+<link rel="stylesheet" type="text/css" href="/vacationReviewsStyles.css"></link>
+
+</head>
+
+<body>
+
+	<header>
+
+		<h1 class="headline">Vacation Rental Reviews</h1>
+
+	</header>
+
+	<div class="content">
+		<h2 th:text="${review.title}"></h2>
+		<img class="image" th:src="${review.image}" />
+		<p class="firstparagraph" th:text="${review.content}"></p>
+		<h3 th:each="tag: ${review.tags}" th:text="${tag.name}"></h3>
+	</div>
+	 
+	
+	<form method="POST">
+	<input name="id" type="hidden" th:value="${review.id}" />
+	<input type="text" name="name" />
+	<button th:formaction="@{/add-tag}">add tag</button>
+	</form>
+	
+	<form method="POST">
+	<input name="id" type="hidden" th:value="${review.id}" />
+	<input type="text" name="name" />
+	<button th:formaction="@{/remove-tag}">remove tag</button>
+	</form>
+	
+	<form>
+	<input name="reviewId" type="hidden" th:value="${review.id}" />
+	<ul>
+	<li th:each="tag: ${review.tags}"><span th:text="${tag.name}"></span>
+	<button name ="tagId" th:value="${tag.id}" th:formaction="@{remove-tag-button}">X</button></li>
+	</ul>
+	</form>
+
+	
+	<a href="http://localhost:8080/reviews">Home</a>
+
+</body>
+
+</html>
