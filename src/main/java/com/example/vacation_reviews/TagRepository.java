@@ -1,6 +1,6 @@
 package com.example.vacation_reviews;
 
-import java.util.List;
+
 
 import org.springframework.data.repository.CrudRepository;
 

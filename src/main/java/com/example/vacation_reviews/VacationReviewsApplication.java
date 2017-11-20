@@ -10,3 +10,5 @@ public class VacationReviewsApplication {
 		SpringApplication.run(VacationReviewsApplication.class, args);
 	}
 }
+
+

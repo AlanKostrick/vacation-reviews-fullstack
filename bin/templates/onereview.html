@@ -43,13 +43,15 @@
 	<input name="reviewId" type="hidden" th:value="${review.id}" />
 	<ul>
 	<li th:each="tag: ${review.tags}"><span th:text="${tag.name}"></span>
-	<button name ="tagId" th:value="${tag.id}" th:formaction="@{remove-tag-button}">X</button></li>
+	<button id="test" name ="tagId" th:value="${tag.id}" th:formaction="@{remove-tag-button}">X</button></li>
 	</ul>
 	</form>
-
+	
 	
 	<a href="http://localhost:8080/reviews">Home</a>
 
+
+<script src="/app.js"></script>
 </body>
 
 </html>
